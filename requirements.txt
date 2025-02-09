@@ -1,0 +1,8 @@
+date_spacy==0.0.1
+docx==0.2.4
+docx2txt==0.8
+pandas==2.2.3
+pdfplumber==0.11.5
+PyPDF2==3.0.1
+python_docx==1.1.2
+spacy==3.8.4

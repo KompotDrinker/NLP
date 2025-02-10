@@ -14,7 +14,9 @@ class Parser:
 
     def __init__(self, nlp):
         self.nlp = nlp
+        self.nlp.add_pipe("custom_date_finder", last=True)
         self.ruler = self.nlp.add_pipe("entity_ruler", before="ner")
+        
 
     def doctotext(self, m):
         temp = docx2txt.process(m)
@@ -27,13 +29,13 @@ class Parser:
 
     def pdftotext(self,m):
         pdfFileObj = open(m, 'rb')
-        pdfFileReader = PyPDF2.PdfFileReader(pdfFileObj)
-        num_pages = pdfFileReader.numPages
+        pdfFileReader = PyPDF2.PdfReader(pdfFileObj)
+        num_pages = len(pdfFileReader.pages)
         currentPageNumber = 0
         text = ''
         while(currentPageNumber < num_pages ):
-            pdfPage = pdfFileReader.getPage(currentPageNumber)
-            text = text + pdfPage.extractText()
+            pdfPage = pdfFileReader.pages[currentPageNumber]
+            text = text + '\n' + pdfPage.extract_text ()
             currentPageNumber += 1
         return (text)
 
@@ -49,11 +51,11 @@ class Parser:
 
     def extract_name(self, resume_text):
         for line in resume_text.split('\n'):
-            print(line+"\n")
             nlp_text = self.nlp(line)
             for ent in nlp_text.ents:
                 if(ent.label_=="PER"):
-                    return ent
+                    print(ent.text)
+                    return ent.text
 
     def extract_skills(self,resume_text):
         data = pd.read_csv('skills.csv') 
@@ -68,10 +70,8 @@ class Parser:
         skillset = []
 
         for ent in nlp_text.ents:
-                print
                 if(ent.label_=="SKILL_TITLE"):
                     skillset.append(ent.text)
-        print(skillset)
 
 
         return list(set(skillset))
@@ -93,7 +93,7 @@ class Parser:
         self.ruler.add_patterns(job_patterns)
         company_patterns = [{"label": "COMPANY_TITLE", "pattern": title.lower()} for title in constants.COMPANIES]
         self.ruler.add_patterns(company_patterns)
-        self.nlp.add_pipe("custom_date_finder", last=True)
+        
 
         text=resume_text.lower()
         lines=text.split('\n')
@@ -198,9 +198,11 @@ class Parser:
             file_path = os.path.join(link, file)
             parsed_resumes.append(self.parse_resume(file_path))
         with open("parsed_resumes.json", "w", encoding="utf-8") as f:
+            
             json.dump({"resumes": parsed_resumes}, f, ensure_ascii=False, indent=4)
 
 
-nlp = spacy.load('uk_core_news_sm')
-parser=Parser(nlp)
-print(parser.parse_resume("CVs\Big_Data_Software_Engineer_CV.docx"))
+# nlp = spacy.load('uk_core_news_sm')
+# parser=Parser(nlp)
+# print(parser.parse_folder("CVs"))
+# print(parser.parse_resume("CVs\Big_Data_Software_Engineer_CV.docx"))

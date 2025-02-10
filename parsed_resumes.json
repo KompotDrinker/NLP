@@ -1,0 +1,492 @@
+{
+    "resumes": [
+        {
+            "name": "Java",
+            "contact_info": {
+                "phone": null,
+                "email": [
+                    "mykyta.p.example@gmail.com"
+                ]
+            },
+            "skills": [
+                "Java",
+                "Kotlin"
+            ],
+            "experience": [],
+            "education": [
+                [],
+                [
+                    "бакалавр, національний університет",
+                    "магістр, національний університет"
+                ]
+            ]
+        },
+        {
+            "name": "Володимир С",
+            "contact_info": {
+                "phone": "+34 987 654",
+                "email": [
+                    "Volodymyr123456789@ukr.net"
+                ]
+            },
+            "skills": [
+                "Apache NiFi",
+                "SQL",
+                "Angular",
+                "Apache",
+                "MongoDB",
+                "JUnit",
+                "Python",
+                "MapReduce",
+                "Kubernetes",
+                "Scrum",
+                "Docker",
+                "Java",
+                "PostgreSQL",
+                "Git"
+            ],
+            "experience": [
+                "2023",
+                "2022 - 2023",
+                "2020 - 2020",
+                "2020 - 2020",
+                "2018 - 2019",
+                {
+                    "position": "інженер",
+                    "company": "datainsight",
+                    "years": "2023"
+                },
+                {
+                    "position": "інженер",
+                    "company": "fintechguard",
+                    "years": "2022 - 2023"
+                },
+                {
+                    "position": "програміст",
+                    "company": "data innovations",
+                    "years": "2020 - 2020"
+                },
+                {
+                    "position": "інженер",
+                    "company": "data innovations",
+                    "years": "2020 - 2020"
+                },
+                {
+                    "position": "розробник",
+                    "company": "financial services",
+                    "years": "2018 - 2019"
+                }
+            ],
+            "education": [
+                [
+                    "спеціальність: магістр електромеханіки",
+                    "аспірантура"
+                ],
+                [
+                    "приазовський державний технічний університет"
+                ]
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": "201 0-201 4",
+                "email": null
+            },
+            "skills": [
+                "Adobe XD",
+                "Figma",
+                "Sketch",
+                "JavaScript",
+                "HTML5",
+                "CSS3"
+            ],
+            "experience": [],
+            "education": [
+                [
+                    "бакалавр з цифрового дизаи ну та комунікаціи  ",
+                    "магістр з цифрового дизаи ну та комунікаціи  "
+                ],
+                [
+                    "львівськии  університет дизаи ну  "
+                ]
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": "+390631234567",
+                "email": null
+            },
+            "skills": [
+                "GitHub",
+                "Figma",
+                "SQL",
+                "Go",
+                "GraphQL",
+                "Jira",
+                "Agile"
+            ],
+            "experience": [],
+            "education": [
+                [],
+                []
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": null,
+                "email": [
+                    "dmytro.g.987654321@gmail.com"
+                ]
+            },
+            "skills": [
+                "Swagger",
+                "GitHub",
+                "SonarQube",
+                "MySQL",
+                "Terraform",
+                "Oracle",
+                "Apache",
+                "MongoDB",
+                "JUnit",
+                "OpenAPI",
+                "Docker",
+                "CircleCI",
+                "Bitbucket",
+                "Java",
+                "PostgreSQL",
+                "Git",
+                "GitLab"
+            ],
+            "experience": [],
+            "education": [
+                [
+                    "магістр компʼютерних наук, київський національний університет імені т. шевченка"
+                ],
+                [
+                    "магістр компʼютерних наук, київський національний університет імені т. шевченка"
+                ]
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": "380331234567",
+                "email": [
+                    "oleksandr380331234567@gmail.com"
+                ]
+            },
+            "skills": [
+                "Kanban",
+                "Figma",
+                "Sketch",
+                "JavaScript",
+                "Git",
+                "Zeplin",
+                "GraphQL",
+                "Scrum",
+                "Jira",
+                "GitLab"
+            ],
+            "experience": [
+                "2022",
+                {
+                    "position": "розробник",
+                    "company": "techsolutions",
+                    "years": "2022"
+                }
+            ],
+            "education": [
+                [],
+                []
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": null,
+                "email": [
+                    "vadym0989876543@ukr.net"
+                ]
+            },
+            "skills": [
+                "GitHub",
+                "TypeScript",
+                "Django",
+                "Kanban",
+                "MySQL",
+                "JavaScript",
+                "Jenkins",
+                "HTML5",
+                "Agile",
+                "Python",
+                "Scrum",
+                "Docker",
+                "CircleCI",
+                "PostgreSQL",
+                "Git",
+                "React"
+            ],
+            "experience": [],
+            "education": [
+                [
+                    "бакалавр з компʼютерних наук",
+                    "магістр з програмної інженерії"
+                ],
+                [
+                    "  київський національний університет імені тараса шевченка",
+                    "  національний університет «львівська політехніка»"
+                ]
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": null,
+                "email": null
+            },
+            "skills": [
+                "GitHub",
+                "TypeScript",
+                "Flask",
+                "Pandas",
+                "MySQL",
+                "JavaScript",
+                "Python",
+                "Scrum",
+                "Docker",
+                "CircleCI",
+                "React",
+                "NumPy",
+                "PostgreSQL",
+                "Django"
+            ],
+            "experience": [
+                "2021 - 2022",
+                {
+                    "position": "розробник",
+                    "company": "techsolutions",
+                    "years": "2021 - 2022"
+                }
+            ],
+            "education": [
+                [
+                    "магістр з компʼютерної "
+                ],
+                [
+                    "університет  "
+                ]
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": null,
+                "email": null
+            },
+            "skills": [
+                "GitHub",
+                "Flask",
+                "JavaScript",
+                "SQL",
+                "Terraform",
+                "NoSQL",
+                "Python",
+                "Docker",
+                "GitLab",
+                "React"
+            ],
+            "experience": [],
+            "education": [
+                [
+                    "магістр з компʼютерних технологій  "
+                ],
+                [
+                    "львівський національний університет  "
+                ]
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": null,
+                "email": null
+            },
+            "skills": [
+                "GitHub",
+                "AWS Lambda",
+                "SQLite",
+                "Postman",
+                "SQL",
+                "PyCharm",
+                "R",
+                "Python",
+                "PostgreSQL",
+                "Git",
+                "GitLab"
+            ],
+            "experience": [
+                "2022",
+                {
+                    "position": "розробник",
+                    "company": "data innovations",
+                    "years": "2022"
+                }
+            ],
+            "education": [
+                [],
+                [
+                    "львівський національний університет імені івана франка  "
+                ]
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": null,
+                "email": null
+            },
+            "skills": [
+                "Selenium",
+                "Jira",
+                "Docker",
+                "Postman"
+            ],
+            "experience": [
+                null,
+                {
+                    "position": "керівник",
+                    "company": "evo",
+                    "years": null
+                }
+            ],
+            "education": [
+                [
+                    "кваліфікація : бакалавр  "
+                ],
+                [
+                    "установа : національний  технічний  університет  україни  \"київський  політехнічний  інститут \" "
+                ]
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": "2020 - 2024",
+                "email": null
+            },
+            "skills": [
+                "Java",
+                "GraphQL",
+                "Kotlin"
+            ],
+            "experience": [],
+            "education": [
+                [
+                    "магістр з економічної  кібернетики  "
+                ],
+                []
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": "6312345678",
+                "email": [
+                    "таras.06312345678@gmail.com"
+                ]
+            },
+            "skills": [
+                "Jenkins",
+                "JUnit",
+                "VMware",
+                "SoapUI",
+                "Scrum",
+                "Docker",
+                "Selenium",
+                "Java",
+                "Jira",
+                "GitLab"
+            ],
+            "experience": [],
+            "education": [
+                [
+                    "кпі – магістр з програмного забезпечення автоматизованих систем"
+                ],
+                []
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": "+49123 456 78 91",
+                "email": [
+                    "vasyl.k.example@gmail.com"
+                ]
+            },
+            "skills": [
+                "MySQL",
+                "JavaScript",
+                "Angular",
+                "HTML5",
+                "React"
+            ],
+            "experience": [],
+            "education": [
+                [],
+                []
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": "+380559876543",
+                "email": [
+                    "kostyantyn0559876543@ukr.net"
+                ]
+            },
+            "skills": [
+                "Tomcat",
+                "AWS Lambda",
+                "Postman",
+                "Go",
+                "Apache",
+                "Nginx",
+                "Vue.js",
+                "Python",
+                "Docker",
+                "Java",
+                "PostgreSQL"
+            ],
+            "experience": [],
+            "education": [
+                [
+                    "  вересени 2015 — липень 2021 магістр з компʼютерних наук, вінницький політехнічний інститут вінниця"
+                ],
+                []
+            ]
+        },
+        {
+            "name": null,
+            "contact_info": {
+                "phone": "2003 - 2009",
+                "email": null
+            },
+            "skills": [
+                "Journey Mapping"
+            ],
+            "experience": [],
+            "education": [
+                [
+                    "2003 - 2009 магістр з міжнародних відносин"
+                ],
+                [
+                    "львівський національний університет",
+                    "школа візуальних мистецтв"
+                ]
+            ]
+        }
+    ]
+}

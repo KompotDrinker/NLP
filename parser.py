@@ -16,18 +16,17 @@ class Parser:
         self.nlp = nlp
         self.nlp.add_pipe("custom_date_finder", last=True)
         self.ruler = self.nlp.add_pipe("entity_ruler", before="ner")
-        
 
-    def doctotext(self, m):
+    def doctotext(self, m): # Функція перетворення даних docx на текст
         temp = docx2txt.process(m)
         resume_text = []
         for line in temp.split('\n'):
-            if line:  # Ignore empty lines
+            if line: 
                 resume_text.append(line.replace('\t', ' '))
         text = "\n".join(resume_text)
         return (text)
 
-    def pdftotext(self,m):
+    def pdftotext(self,m): # Функція перетворення даних pdf на текст
         pdfFileObj = open(m, 'rb')
         pdfFileReader = PyPDF2.PdfReader(pdfFileObj)
         num_pages = len(pdfFileReader.pages)
@@ -39,25 +38,24 @@ class Parser:
             currentPageNumber += 1
         return (text)
 
-    def extract_mobile_number(self,resume_text):
+    def extract_mobile_number(self,resume_text): # Функція пошуку номеру телефону за regex-шаблоном
         phone = re.findall(re.compile(r'[\+\(]?[1-9][0-9 .\-\(\)]{8,}[0-9]'), resume_text)
         if phone:
             number = ''.join(phone[0])
             return number
 
-    def extract_email_addresses(self,string):
+    def extract_email_addresses(self,string): # Функція пошуку email-адреси за regex-шаблоном
         r = re.compile(r'[\w\.-]+@[\w\.-]+')
         return r.findall(string)
 
-    def extract_name(self, resume_text):
+    def extract_name(self, resume_text): # Функція пошуку імені у вигляді entity
         for line in resume_text.split('\n'):
             nlp_text = self.nlp(line)
             for ent in nlp_text.ents:
                 if(ent.label_=="PER"):
-                    print(ent.text)
                     return ent.text
 
-    def extract_skills(self,resume_text):
+    def extract_skills(self,resume_text): # Функція навичок (на основі існуючих навичок у фалі skills.csv)
         data = pd.read_csv('skills.csv') 
         skills = data[data.columns[0]].tolist()
         skills=list(map(str,skills))
@@ -76,16 +74,14 @@ class Parser:
 
         return list(set(skillset))
 
-    def contains_word(self,word, word_list):
+    def contains_word(self,word, word_list): # Функція пошуку слова у массиві слів
         return word.lower() in (w.lower() for w in word_list)
 
 
-    def extract_experience(self, resume_text):
+    def extract_experience(self, resume_text): # Функція досвіду роботи
         positions = []
         companies = []
         experience = []
-        
-        
 
         if "ner" in self.nlp.pipe_names:
             self.nlp.remove_pipe("ner")
@@ -94,7 +90,6 @@ class Parser:
         company_patterns = [{"label": "COMPANY_TITLE", "pattern": title.lower()} for title in constants.COMPANIES]
         self.ruler.add_patterns(company_patterns)
         
-
         text=resume_text.lower()
         lines=text.split('\n')
 
@@ -124,18 +119,18 @@ class Parser:
 
         return experience
 
-    def find_entity_within_radius(self,lines, target_index, pattern, radius=2):
+    def find_entity_within_radius(self,lines, target_index, pattern, radius=2): # Функція пошуку певного значення entity у радіусі кількох строчок
         Values=[]
         for i in range(max(0, target_index - radius), min(len(lines), target_index + radius + 1)):
             nlp_text = self.nlp(lines[i])
 
             for ent in nlp_text.ents:
-                if ent.label_ == pattern:  # Посада
+                if ent.label_ == pattern: 
                     Values.append(ent.text)
         
         return Values
 
-    def get_education(self,document):
+    def get_education(self,document): # Функція пошуку навчання
         output = []
         education = []
         institution = []
@@ -155,7 +150,7 @@ class Parser:
         return education, institution
 
     @Language.component("custom_date_finder")
-    def custom_date_finder(doc):
+    def custom_date_finder(doc): # Функція пошуку дати у вигляді року
         matches = re.compile(r"(?<!\d)(19\d{2}|20\d{2})(?!\d)").finditer(doc.text)
         new_ents = []
         for match in matches:
@@ -165,7 +160,8 @@ class Parser:
                 new_ents.append(span)
         doc.ents = list(doc.ents) + new_ents  # Додаємо знайдені дати у doc.ents
         return doc
-    def parse_resume(self,link):
+    
+    def parse_resume(self,link): # Функція парсингу єдиного резюме
         FilePath = link
         FilePath.endswith(('.pdf', '.docx'))
         # textinput
@@ -192,7 +188,7 @@ class Parser:
         
     }
 
-    def parse_folder(self,link):
+    def parse_folder(self,link): # Функція парсингу папки резюме
         parsed_resumes = []
         for file in os.listdir(link):
             file_path = os.path.join(link, file)
